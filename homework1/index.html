@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/vue@next"></script>
-    <title>Document</title>
-</head>
-<body>
-    <div id = "application">
-        
-    </div>
-   <script src = "index.js"></script> 
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/vue@next"></script>
+        <link rel="stylesheet" href="index.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="application">
+            <section>
+                <div v-for="cat in cats" class = "item_container">
+                    <h2>Имя: {{cat.name}}</h2>
+                    <p>Возраст: {{cat.age}}</p>
+                    <p>Цвет: {{cat.color}}</p>
+                    <img :src="cat.img">
+                    <button>Подробнее</button>
+                </div>
+            </section>
+
+        </div>
+        <script src="index.js"></script>
+    </body>
 </html>

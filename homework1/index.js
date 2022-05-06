@@ -1,16 +1,31 @@
 "use strict";
 
 let rootComponentOption = {
-    // компонент data -метод который возвращает объект свойств
+    
     data() {
         return {
-            userInput: " ",
-            book: {
-                title: "vue js",
-                author: "js developer",
-                otherAuthors: ["jzkc", "hgrsdjf"],
-                img: "https://picsum.photos/id/44/200/300"
-            }
+            
+            cats : [
+                {
+                    name: "Люся",
+                    age: "1 год",
+                    color: "трехцветная",
+                    img: "https://picsum.photos/id/219/1000/1000"
+                },
+                {
+                    name: "Макс",
+                    age: 4,
+                    color: "серый",
+                    img: "https://picsum.photos/id/1074/1000/1000"
+                },
+                {
+                    name: "Василий",
+                    age: 1,
+                    color: "трехцветный",
+                    img: "https://picsum.photos/id/593/1000/1000"
+                }
+            ],
+           
         }
     }
    
