@@ -1,4 +1,4 @@
-let articles =  [
+let articles = [
    {
       title: "Нейросеть может читать текст быстрее человека",
       image: "https://picsum.photos/id/22/1000/1000"
@@ -25,10 +25,10 @@ let articles =  [
    }
 ];
 
- Vue.createApp({
-     data () {
-       return {
-             goods :  [
+Vue.createApp({
+   data() {
+      return {
+         goods: [
             {
                title: "Пианино",
                price: 3000,
@@ -57,22 +57,27 @@ let articles =  [
          ],
          articles,
          goodsSorted: [],
-         typeList : true,
-         
-        }
-     },
-     computed : {
-         sortGoodsByCount () {
-            return this.goods.sort(
-                (b1, b2) => b1.count - b2.count
-        )
-               
-         }
-     }
+         typeList: true,
+
+      }
+   },
+   computed: {
+      sortGoodsByCount() {
+         return this.goods.sort(
+            (b1, b2) => b1.count - b2.count
+         )
+
+      },
+      sortGoodByName() {
+         return this.goods.sort(
+            (b1, b2) => b1.title.localCompare(b2.title)
+         )
+      }
+   }
 
 
 
- }).mount("#app")
+}).mount("#app")
 
 //  Вывести информацию о товарах в html, по каждому товару вывести: название и стоимость (количество в html выводить не нужно).
 

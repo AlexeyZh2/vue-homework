@@ -1,6 +1,9 @@
 body {
     background-color: aqua;
 }
+#task_one {
+    text-align: center;
+}
 .zero {
 background-color: red;
 }
@@ -87,4 +90,10 @@ margin-right: 5px;
     display: inline-block;
     text-align: left;
     margin: auto;
+}
+.article_title {
+    display: none;
+}
+.sort_button {
+    margin: 0 auto;
 }

@@ -23,6 +23,8 @@
 
                     </div>
                 </div>
+                <button class = "sort_button">Отсортировать в алфавитном порядке</button>
+                <button class = "sort_button">Отсортировать по количеству товара</button>
             </section>
             <section id = "task_two">
                 <h3>Задание №2</h3>
@@ -33,25 +35,17 @@
                     <button type="button" class = "type_list"
                     v-on:click="typeList=false">Отобразить списком</button>
                 </div>
-                <div class = "articles_container" v-if = "typeList === true">
+                <!-- <div class = "articles_container" v-if = "typeList === true"> -->
+                <div :class = "{articles_container : typeList , articles_container_list : !typeList}" >
                     <div v-for = "article of articles"
-                    class="item_articles">
+                    :class="{item_articles : typeList, item_articles_list : !typeList}">
                         <img :src = "article.image" 
-                        class = "article_image">
-                        <!-- <h2 class="article_title">{{article.title}}</h2> -->
+                        :class = "{article_image : typeList, article_image_list:!typeList}">
+                        <h2 :class="{article_title : typeList, article_title_list : !typeList }">{{article.title}}</h2>
                     </div>
 
                 </div>
-                <div class = "articles_container_list" v-if = "typeList === false">
-                    <div v-for = "article of articles"
-                    class="item_articles_list">
-                        <img :src = "article.image" 
-                        class = "article_image_list">
-                        <h2 class="article_title_list">{{article.title}}</h2>
-                    </div>
-
-                </div>
-
+                
             </section>
         </div>
         <script src="index.js"></script>
