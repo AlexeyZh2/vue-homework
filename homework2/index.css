@@ -1,0 +1,90 @@
+body {
+    background-color: aqua;
+}
+.zero {
+background-color: red;
+}
+.not-many {
+    background-color: yellow;
+
+}
+.many {
+background-color: green;
+}
+.task-1 {
+    display: flex;
+    width: 90%;
+    margin: 50px auto;
+    justify-content: space-around;
+}
+.good_container {
+    display: inline-block;
+    width: 19%;
+}
+h2 {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+p {
+    text-align: center;
+}
+.button_container {
+    display: flex;
+    width: 90%;
+    box-sizing: border-box;
+    margin: 0 auto 40px;
+    justify-content: center;
+
+}
+h3 {
+    text-align: center;
+    margin-top: 100px;
+}
+.type_list {
+    width: 49%;
+    margin-right: 10px;
+    height: 60px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.type_list:hover {
+    opacity: .7;
+}
+.articles_container {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.articles_container_list {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    flex-direction: column;
+
+}
+.article_image {
+    width: 100%;
+    border-radius: 5px;
+}
+.article_image_list {
+    width: 15%;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.item_articles {
+width: 30%;
+margin-right: 5px;
+}
+.item_articles_list {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.article_title_list {
+    display: inline-block;
+    text-align: left;
+    margin: auto;
+}

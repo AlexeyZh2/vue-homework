@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+        <script src="https://unpkg.com/vue@next"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <section id = "task_one">
+                <h2>Список товаров</h2>
+                <div class="task-1">
+                    <div v-for="good in sortGoodsByCount"
+                        class="good_container"
+                        v-bind:class="{zero: good.count === 0,
+                        'not-many': good.count <20 && good.count >=1,
+                        many: good.count > 20}">
+                        <h2>{{good.title}}</h2>
+                        <p>{{good.price}}</p>
+
+                    </div>
+                </div>
+            </section>
+            <section id = "task_two">
+                <h3>Задание №2</h3>
+                <div class="button_container">
+                    <button type="button"
+                     class = "type_list"
+                     v-on:click="typeList=true">Отобразить сеткой</button>
+                    <button type="button" class = "type_list"
+                    v-on:click="typeList=false">Отобразить списком</button>
+                </div>
+                <div class = "articles_container" v-if = "typeList === true">
+                    <div v-for = "article of articles"
+                    class="item_articles">
+                        <img :src = "article.image" 
+                        class = "article_image">
+                        <!-- <h2 class="article_title">{{article.title}}</h2> -->
+                    </div>
+
+                </div>
+                <div class = "articles_container_list" v-if = "typeList === false">
+                    <div v-for = "article of articles"
+                    class="item_articles_list">
+                        <img :src = "article.image" 
+                        class = "article_image_list">
+                        <h2 class="article_title_list">{{article.title}}</h2>
+                    </div>
+
+                </div>
+
+            </section>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
