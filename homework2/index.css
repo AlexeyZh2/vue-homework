@@ -1,6 +1,9 @@
 body {
     background-color: aqua;
 }
+div {
+    width: 100%;
+}
 #task_one {
     text-align: center;
 }
@@ -16,13 +19,13 @@ background-color: green;
 }
 .task-1 {
     display: flex;
-    width: 90%;
+    width: 100%;
     margin: 50px auto;
     justify-content: space-around;
 }
 .good_container {
     display: inline-block;
-    width: 19%;
+    width: 18%;
 }
 h2 {
     width: 80%;

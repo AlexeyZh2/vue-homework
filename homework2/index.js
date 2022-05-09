@@ -58,6 +58,7 @@ Vue.createApp({
          articles,
          goodsSorted: [],
          typeList: true,
+         sortedByCount: true,
 
       }
    },
@@ -70,7 +71,7 @@ Vue.createApp({
       },
       sortGoodByName() {
          return this.goods.sort(
-            (b1, b2) => b1.title.localCompare(b2.title)
+            (b1, b2) => b1.title.localeCompare(b2.title)
          )
       }
    }

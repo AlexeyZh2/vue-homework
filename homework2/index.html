@@ -10,42 +10,65 @@
     </head>
     <body>
         <div id="app">
-            <section id = "task_one">
+            <section id="task_one">
                 <h2>Список товаров</h2>
-                <div class="task-1">
-                    <div v-for="good in sortGoodsByCount"
-                        class="good_container"
-                        v-bind:class="{zero: good.count === 0,
-                        'not-many': good.count <20 && good.count >=1,
-                        many: good.count > 20}">
-                        <h2>{{good.title}}</h2>
-                        <p>{{good.price}}</p>
+                <div class="sort" v-if = "sortedByCount">
+                    <div class="task-1">
 
+                        <div v-for="good in sortGoodsByCount"
+                            class="good_container"
+                            v-bind:class="{zero: good.count === 0,
+                            'not-many': good.count <20 && good.count >=1,
+                            many: good.count > 20}">
+                            <h2>{{good.title}}</h2>
+                            <p>{{good.price}}</p>
+
+                        </div>
                     </div>
                 </div>
-                <button class = "sort_button">Отсортировать в алфавитном порядке</button>
-                <button class = "sort_button">Отсортировать по количеству товара</button>
+                <div class="sort" v-else>
+                    <div class="task-1">
+
+                        <div v-for="good in sortGoodByName"
+                            class="good_container"
+                            v-bind:class="{zero: good.count === 0,
+                            'not-many': good.count <20 && good.count >=1,
+                            many: good.count > 20}">
+                            <h2>{{good.title}}</h2>
+                            <p>{{good.price}}</p>
+
+                        </div>
+                    </div>
+                </div>
+                <button class="sort_button"
+                v-on:click="sortedByCount=false">Отсортировать в алфавитном порядке</button>
+                <button class="sort_button"
+                v-on:click="sortedByCount=true">Отсортировать по количеству товара</button>
             </section>
-            <section id = "task_two">
+            <section id="task_two">
                 <h3>Задание №2</h3>
                 <div class="button_container">
                     <button type="button"
-                     class = "type_list"
-                     v-on:click="typeList=true">Отобразить сеткой</button>
-                    <button type="button" class = "type_list"
-                    v-on:click="typeList=false">Отобразить списком</button>
+                        class="type_list"
+                        v-on:click="typeList=true">Отобразить сеткой</button>
+                    <button type="button" class="type_list"
+                        v-on:click="typeList=false">Отобразить списком</button>
                 </div>
                 <!-- <div class = "articles_container" v-if = "typeList === true"> -->
-                <div :class = "{articles_container : typeList , articles_container_list : !typeList}" >
-                    <div v-for = "article of articles"
-                    :class="{item_articles : typeList, item_articles_list : !typeList}">
-                        <img :src = "article.image" 
-                        :class = "{article_image : typeList, article_image_list:!typeList}">
-                        <h2 :class="{article_title : typeList, article_title_list : !typeList }">{{article.title}}</h2>
+                <div :class="{articles_container : typeList ,
+                    articles_container_list : !typeList}">
+                    <div v-for="article of articles"
+                        :class="{item_articles : typeList, item_articles_list :
+                        !typeList}">
+                        <img :src="article.image"
+                            :class="{article_image : typeList,
+                            article_image_list:!typeList}">
+                        <h2 :class="{article_title : typeList,
+                            article_title_list : !typeList }">{{article.title}}</h2>
                     </div>
 
                 </div>
-                
+
             </section>
         </div>
         <script src="index.js"></script>
