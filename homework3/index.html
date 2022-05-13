@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Document</title>
+</head>
+<body>
+    <section id="app">
+        
+            <h3>Статьи</h3>
+            <label for="find">Поиск</label>
+            <input type = "text" name = "find" v-model = "text" id = "find">
+            <div v-if="!text">
+                <div v-for="article of articles">
+                    <h2>{{article.title}}</h2>
+                </div>
+
+            </div>
+            <div v-else>
+                <div v-for="article of  filterArticles">
+                    <h2>{{article.title}}</h2>
+                </div>
+
+            </div>
+
+        </section>
+    </section>
+    <script src = "index.js"></script>
+</body>
+</html>
