@@ -1,0 +1,10 @@
+.task {
+
+    margin-bottom: 80px;
+}
+.item {
+    background-color: aqua;
+}
+.item_active {
+    background-color: firebrick;
+}

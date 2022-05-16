@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+        <script src="https://unpkg.com/vue@next"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <section id="app">
+            <button type="button" v-on:click="openPopup=true">Добавить
+                фотографию</button>
+            <div :class="{popup : !openPopup,popup_open: openPopup}">
+                <div class="popup_container">
+
+                    <form name="add-foto" class="add-foto" v-on:submit.prevent = "sendRequest">
+                        <button type="button" class="close_button"
+                            v-on:click="closePopup">X</button>
+                        <h2>Добавление фотографии</h2>
+                        <label for="name">Введите имя</label>
+                        <input type="text" id="name" v-model="addUserFoto.name">
+                        <label for="link">Введите ссылку на фотографию</label>
+                        <input type="text" id="link" v-model="addUserFoto.link">
+                        <button type="submit" class = "save_button">Сохранить фотографию</button>
+                    </form>
+                </div>
+            </div>
+            <div class="cards_container">
+                <item-card v-for="card in initialData" :info="card"></item-card>
+            </div>
+        </section>
+        <script src="index.js"></script>
+    </body>
+</html>

@@ -4,29 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <script src="https://unpkg.com/vue@next"></script>
     <title>Document</title>
 </head>
 <body>
     <section id="app">
-        
-            <h3>Статьи</h3>
+        <div class = "task">
+            <h3>Задание про вывод статей и поиск</h3>
             <label for="find">Поиск</label>
             <input type = "text" name = "find" v-model = "text" id = "find">
             <div v-if="!text">
                 <div v-for="article of articles">
                     <h2>{{article.title}}</h2>
                 </div>
-
             </div>
             <div v-else>
                 <div v-for="article of  filterArticles">
                     <h2>{{article.title}}</h2>
                 </div>
-
             </div>
+        </div>
+        <div class = "task">
+            <h3>Задание №2</h3>
+            <div v-for="service in services" 
+            class = "item"
+            v-on:click ="userChoice"
+            :data-price="service.price">
+                <h2>{{service.title}}</h2>
+                <p>{{service.price}}</p>
+            </div>
+            <p>Итоговая стоимость выбранных услуг: {{sum}}рублей.</p>
+        </div>
 
-        </section>
     </section>
     <script src = "index.js"></script>
 </body>
