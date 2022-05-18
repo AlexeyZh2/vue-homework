@@ -92,6 +92,7 @@ Vue.createApp({
         userChoice (price, title) {
             console.log(price, title)
             console.log(this.$refs)
+            console.log(this.$refs[title])
             console.log(this.$refs[title][0])
             this.$refs[title][0].classList.toggle("item_active")
             if (this.$refs[title][0].classList.contains("item_active")){

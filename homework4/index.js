@@ -26,11 +26,7 @@ const initialData = [
     },
 
 ]
-
-
-
-
-
+console.log(initialData)
 const card = {
     template: 
     `<div class="item_card">
@@ -45,7 +41,6 @@ const card = {
     methods: {
         deleteCard (event) {
             event.target.parentNode.remove()
-            console.log("Ура")
         }
     }
 }
@@ -70,12 +65,7 @@ const app = Vue.createApp({
                 name: this.addUserFoto.name,
                 link: this.addUserFoto.link
             }
-           
            this.initialData.push(newCard)
-           //this.initialData.push(newCard)
-            
-            console.log(this. addUserFoto)
-            console.log(this. initialData)
         }
     }
 })
