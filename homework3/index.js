@@ -89,37 +89,16 @@ Vue.createApp({
 
     },
     methods: {
-        userChoice (event) {
-            console.log(event.target)
-            if ((event.target.dataset.price !== undefined) && (!(event.target.classList.contains("item_active")))) {
-                console.log("if 1")
-                event.target.classList.toggle("item_active")
-                //this.sum += +event.target.dataset.price
+        userChoice (price, title) {
+            console.log(price, title)
+            console.log(this.$refs)
+            console.log(this.$refs[title][0])
+            this.$refs[title][0].classList.toggle("item_active")
+            if (this.$refs[title][0].classList.contains("item_active")){
+            this.sum += price
+            } else {
+                this.sum -= price
             }
-             if (event.target.classList.contains("item_active")) {
-                console.log("if 2")
-                this.sum += +event.target.dataset.price
-            //     event.target.classList.remove("item_active")
-            //     this.sum -= +event.target.dataset.price
-            }
-        //     if (event.target.dataset.price === undefined) {
-        //         console.log("if-3")
-        //         event.target.parentNode.classList.add("item_active")
-        //         this.sum += +event.target.parentNode.dataset.price
-        //     }
-        //     if (event.target.parentNode.classList.contains("item_active")) {
-        //         console.log("if-4")
-        //         event.target.parentNode.classList.remove("item_active")
-        //         this.sum -= +event.target.parentNode.dataset.price
-        //     }
-        // },
-        // deleteUserChoice: function (event) {
-        //     if ((event.target.hasAttribute("data-price")) && (event.target.classList.length === 2)) {
-        //         console.log("Ура!");
-        //         event.target.classList.remove("item_active")
-        //         this.sum -= +event.target.getAttribute("data-price")
-        //     }
-        // }
     }
 }
 

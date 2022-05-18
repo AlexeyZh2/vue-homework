@@ -29,8 +29,8 @@
             <h3>Задание №2</h3>
             <div v-for="service in services" 
             class = "item"
-            v-on:click ="userChoice"
-            :data-price="service.price">
+            v-on:click ="userChoice(service.price, service.title)"
+            :ref="service.title">
                 <h2>{{service.title}}</h2>
                 <p>{{service.price}}</p>
             </div>

@@ -32,7 +32,6 @@ const initialData = [
 
 
 const card = {
-    
     template: 
     `<div class="item_card">
     <img :src = "info.link">
@@ -45,23 +44,21 @@ const card = {
     },
     methods: {
         deleteCard (event) {
-            console.log(event.target.parentNode)
-            //this.remove()
             event.target.parentNode.remove()
             console.log("Ура")
         }
-
     }
 }
+
 const app = Vue.createApp({
     data () {
         return {
             initialData,
             openPopup: false,
             addUserFoto : {
-                name: "",
-                link: "",
-            },
+                 name: "",
+                 link: "",
+             },
         }
     },
     methods : {
@@ -69,12 +66,18 @@ const app = Vue.createApp({
             this.openPopup=false
         },
         sendRequest () {
-            this.initialData.push(this. addUserFoto)
+            let newCard = {
+                name: this.addUserFoto.name,
+                link: this.addUserFoto.link
+            }
+           
+           this.initialData.push(newCard)
+           //this.initialData.push(newCard)
+            
             console.log(this. addUserFoto)
             console.log(this. initialData)
         }
     }
-
 })
 app.component("item-card", card)
 app.mount("#app")
